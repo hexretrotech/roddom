@@ -1,0 +1,12 @@
+<?php
+	$host = "localhost";
+	$user = "root";
+	$pass = "root";
+	
+	$database = "roddom1";
+
+	$dp = mysql_connect($host, $user, $pass);
+	
+	mysql_query( 'SET NAMES utf-8' );
+	mysql_select_db($database, $dp);
+?>

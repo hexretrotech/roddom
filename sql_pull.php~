@@ -1,0 +1,10 @@
+<?php
+	include 'sql_acess.php';
+	
+	$sql = mysql_query("SELECT * FROM test");
+	while ($dp = mysql_fetch_object($sql)) {
+		$id = $dp -> id;
+		$name = $dp -> name;
+		echo $id, "<br>", $name;
+	}
+?>

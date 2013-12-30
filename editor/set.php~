@@ -1,0 +1,4 @@
+<?php
+$set = $_POST['editor1'];
+echo htmlspecialchars( (string)$set );
+?>

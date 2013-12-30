@@ -1,0 +1,70 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="skin/main.css">
+	<link rel="stylesheet" type="text/css" href="skin/style.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>{title_main_page}</title>
+	<script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js'></script>
+    <script type='text/javascript' src='blur.js'></script>
+        <script type="text/javascript">
+                $(document).ready(function(){
+                        $('.slide').blurjs({
+    source: 'body',     //Background to blur
+    radius: 5,          //Blur Radius
+    overlay: '',        //Overlay Color, follow CSS3's rgba() syntax
+    offset: {           //Pixel offset of background-position
+        x: 0,
+        y: 0
+    },
+    optClass: '',                   //Class to add to all affected elements
+    cache: false,                   //If set to true, blurred image will be cached and used in the future. If image is in cache already, it will be used.
+    cacheKeyPrefix: 'blurjs-',      //Prefix to the keyname in the localStorage object
+    draggable: true                //Only used if jQuery UI is present. Will change background-position to fixed
+});
+                });
+        </script>
+</head>
+<body>
+	<div class="head_block">
+		<div class="head_info_block">
+			
+				<img class="gerb" src="skin/gerb_lipetsk.png" height=100px/>
+			<div class="blur"></div>
+
+			<div class="title">
+			Родильный дом №1
+			</div>
+		</div>
+	</div>
+
+	<div class="content_block">
+		<div class="menu">
+			<ul>
+				{menu_item}
+			</ul>
+		</div>
+		<hr>
+		<div class="slide"> 
+		<!---слайды !-->Слайды
+		</div>
+		<hr>
+		<div class="content_text">
+			<div class="content">
+				<p>Глубокоуважаемые пациенты! Вы зашли на сайт поликлиники №7. В разделах,  отражающих различные сферы нашей деятельности, я надеюсь, Вы найдёте самую исчерпывающую информацию. Мы хотим  улучшить качество оказания медицинской помощи в нашем учреждении, для этого нам необходим с вами постоянный диалог.  Наш сайт - это в том числе возможность обменяться мнением, высказать свои предложения. </p>
+
+ <p>На сайте Управления здравоохранения Липецкой области uzalo48.lipetsk.ru в разделе структура здравоохранения есть страничка ГУЗ "Липецкая городская поликлиника №7", на страничке есть вопрос по степени удовлетворённости полученными медицинскими услугами. Оцените нашу работу. Огромная просьба, если вы ставите ответ "не удовлетворён", напишите нам почему.
+</p>
+<p>Ждем ваших сообщений и предложений по улучшению нашей работы  в разделе "Вопросы и ответы". 
+</p>
+<p>
+Мы работаем для Вас и хотим, чтобы Вы были здоровы! 
+</p>
+<p>
+Главный врач Герман Юрьевич Журавлёв.
+</p>			</div>
+		</div>
+	</div>
+</body>
+</html>
+	 
