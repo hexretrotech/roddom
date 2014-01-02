@@ -43,7 +43,7 @@ sffsdf
                 $(document).ready(function(){
                         $('.circle').blurjs({
                                 overlay: 'rgba(0,0,0,0.1)',
-                                radius:10
+                                radius:10,
 								draggable: true
                         });
                 });
