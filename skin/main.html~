@@ -20,7 +20,7 @@
     optClass: '',                   //Class to add to all affected elements
     cache: false,                   //If set to true, blurred image will be cached and used in the future. If image is in cache already, it will be used.
     cacheKeyPrefix: 'blurjs-',      //Prefix to the keyname in the localStorage object
-    draggable: false                //Only used if jQuery UI is present. Will change background-position to fixed
+    draggable: true                //Only used if jQuery UI is present. Will change background-position to fixed
 });
                 });
         </script>
