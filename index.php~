@@ -3,7 +3,7 @@ include 'sql_connect.php';
 $query = $db->query("SELECT * FROM menu");
 while($item = $query->fetch(PDO::FETCH_ASSOC))
 {
-	$menu_item = $menu_item . '<li><a href=' . $item[src] . '>' . $item[label] . '</a></li>';
+	$menu_item = $menu_item . '<a href=' . $item[src] . '><li class="menuitem">' . $item[label] . '</li></a>';
 }
 	$title = "главная";
 	$tpl = file_get_contents('skin/main.html');
