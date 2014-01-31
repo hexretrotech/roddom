@@ -1,62 +1,49 @@
 @font-face {
 	font-family: Pompadur; /* Гарнитура шрифта */
-	src: url(default.woff); /* Путь к файлу со шрифтом */
+	src: url(Gabriela.ttf); /* Путь к файлу со шрифтом */
 }
 
 body {
 	font-size: 16pt;
 	margin: 0;
 	font-family: Roboto,arial,sans-serif;
+	
+	background-color: #FFFBE7;
+	background-color: #f9f9f9;
+
+}
+
+p {
+	text-indent: 1.5em;
 }
 
 .head {
-	
-	height: 130px;
+	overflow: hidden;
+	height: 88px;
+	display:block;
+	padding:7px;
 }
 
-.menu {
-	height:40px;
-	background: linear-gradient(to top, #fff, #EEEEEC);
-	box-shadow: 0px 0px 7px 3px rgba(0,0,0,.1);
-	z-index:5;
-	padding: 0;
-	border: 1px solid rgba(0, 0, 0, 0.1);
+
+.title_name {
+	font-family: Pompadur;
+	font-size:41pt;
+	float:left;
+	padding:20px;
 }
+
 
 .wrap {
-	width:1200px;
+	width:1300px;
 	overflow: hidden;
 	box-shadow: 0px 0px 7px 3px rgba(0,0,0,.1);
-	margin-left: calc(50% - 600px);
-	margin-right: calc(50% - 600px);
-	margin-bottom: calc(50% - 600px);
+	margin: 20px -webkit-calc(50% - 650px) 20px -webkit-calc(50% - 650px);
+	margin: 20px -moz-calc(50% - 650px) 20px -moz-calc(50% - 650px);
+	margin: 20px calc(50% - 650px) 20px calc(50% - 650px);
+	background-color: white;
 }
 
-.content {
-	padding: 50px 30px 30px 30px;
-	overflow:hidden;
 
-	
-}
-
-.menuitem {
-	float: left;
-	width: calc(1200px / 5);
-	cursor: pointer;
-	text-align: center;
-	font-size: 22px;
-	padding: 4px 0 9px 0;
-}
-
-.menu_a {
-	text-decoration: none;
-	color: black;
-}
-
-.menu_a:active {
-	text-decoration: none;
-	color: black;
-}
 hr {
     border: 0;
     height: 0;
@@ -69,4 +56,51 @@ hr {
 	color: rgba(30,55,70,.4);
 	font-size:14px;
 	float:right;
+}
+
+li {
+	display: inline-block;
+	text-align: left;
+	text-align:center;
+}
+
+ul {
+	padding:0;
+}
+
+.content_main {
+
+	overflow:auto;
+}
+
+.contentblock {
+	float: left;
+}
+
+.colomn {
+	width:19%;
+	height:25%;
+	background-color:grey;
+	padding-right:3%;
+}
+
+.work_text {
+	padding-left: 3%;
+	width:75%;
+}
+
+.menu_a {
+	display:block;
+}
+
+.menu_ul {
+	
+}
+
+.title_topic {
+	text-align:center;
+}
+
+.title_topic h2 {
+	margin:10px;
 }

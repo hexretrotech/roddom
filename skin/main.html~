@@ -3,6 +3,9 @@
 	<link rel="stylesheet" type="text/css" href="skin/main.css">
 	<link rel="stylesheet" type="text/css" href="skin/style.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style>
+		.menuitem { width: 100px;}
+	</style>
 	<link rel="stylesheet" type="text/css" href="skin/slider.css" />
 	<script type="text/javascript" src="skin/slide.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -11,21 +14,22 @@
 <body>
 <div class="wrap">
 	<div class="head">
-	
+		
+		<div class="title_name"><span>ГУЗ Липецкий городской родильный дом №1</span></div>
 	</div>
 	
 	<div class="menu">
+		<ul>
 		{menu_item}
+		</ul>
 	</div>
 
 	<div class="slide">
 		<div class="sliderbutton" id="slideleft" onclick="slideshow.move(-1)"></div>
 		<div id="slider">
 			<ul>
-				<li><img src="photos/1.jpg" width="558" height="500" alt="Image One" /></li>
-				<li><img src="photos/2.jpg" width="558" height="235" alt="Image Two" /></li>
-				<li><img src="photos/3.jpg" width="558" height="235" alt="Image Three" /></li>
-				<li><img src="photos/4.jpg" width="558" height="235" alt="Image Four" /></li>
+				<li><img src="skin/slide.png" width="1200px" height="450px" alt="Image One" /></li>
+				<li><img src="skin/slide2.png" width="1200px" height="450px" alt="Image One" /></li>
 			</ul>
 		</div>
 		<div class="sliderbutton" id="slideright" onclick="slideshow.move(1)"></div>
@@ -33,19 +37,7 @@
 		<script type="text/javascript" src="skin/option_slider.js"> </script>
 	</div>
 	
-	<div class="content">
-<a href="#">sd</a>Глубокоуважаемые пациенты! Вы зашли на сайт поликлиники №7. В разделах,  отражающих различные сферы нашей деятельности, я надеюсь, Вы найдёте самую исчерпывающую информацию. Мы хотим  улучшить качество оказания медицинской помощи в нашем учреждении, для этого нам необходим с вами постоянный диалог.  Наш сайт - это в том числе возможность обменяться мнением, высказать свои предложения. 
-
- На сайте Управления здравоохранения Липецкой области uzalo48.lipetsk.ru в разделе структура здравоохранения есть страничка ГУЗ "Липецкая городская поликлиника №7", на страничке есть вопрос по степени удовлетворённости полученными медицинскими услугами. Оцените нашу работу. Огромная просьба, если вы ставите ответ "не удовлетворён", напишите нам почему.
-
-Ждем ваших сообщений и предложений по улучшению нашей работы  в разделе "Вопросы и ответы". 
-
-Мы работаем для Вас и хотим, чтобы Вы были здоровы! 
-
-Главный врач Герман Юрьевич Ж
-<hr>
-<p class="copyright">Copyright © Родильный дом №1 г.Липецк 2014  Все права защищены</p>	
-</div>
+	
 </div>
 </body>
 </html>

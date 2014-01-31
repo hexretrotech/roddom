@@ -1,5 +1,5 @@
 .slide {
 /*	background-image: url(slide.png);*/
 	height: 450px;
-	
+	background: linear-gradient(to top, #fff, #EEEEEC);
 }

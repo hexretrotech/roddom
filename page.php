@@ -7,12 +7,12 @@ while($item = $query->fetch(PDO::FETCH_ASSOC))
 	$number_item_menu = $item[id];
 }
 	$title = "главная";
-	$tpl = file_get_contents('skin/main.html');
+	$tpl = file_get_contents('skin/page.html');
 	$tpl = str_replace('{title_main_page}', $te[1], $tpl);
 	$tpl = str_replace('{menu_item}', $menu_item, $tpl);
-	$number_item_menu = 1200 / $number_item_menu;
+	$number_item_menu = 1300 / $number_item_menu;
 	$tpl = str_replace('{number_item}', $number_item_menu, $tpl);
 	
 	echo $tpl;
 ?>
-{number_item}
+
