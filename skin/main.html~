@@ -1,41 +1,38 @@
 <html>
 <head>
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="skin/main.css">
+	<link  href="http://fotorama.s3.amazonaws.com/4.4.9/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+<script src="http://fotorama.s3.amazonaws.com/4.4.9/fotorama.js"></script> 
 	<link rel="stylesheet" type="text/css" href="skin/style.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<style>
-		.menuitem { width: 100px;}
-	</style>
-	<link rel="stylesheet" type="text/css" href="skin/slider.css" />
-	<script type="text/javascript" src="skin/slide.js"></script>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<title>{title_main_page}</title>
+	<script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.js"></script>
+	<title>Главная | ГУЗ Липецкий городской родильный дом №1</title>
 </head>
 <body>
-<div class="wrap">
+<div id="wrapg">
 	<div class="head">
-		
-		<div class="title_name"><span>ГУЗ Липецкий городской родильный дом №1</span></div>
+		<div class="title_name"><div style="display: table; width: 100%; height: 100%"><div style="display:table-cell; vertical-align:middle;">ГУЗ Липецкий городской родильный дом №1</div></div></div>
 	</div>
 	
-	<div class="menu">
-		<ul>
-		{menu_item}
-		</ul>
+	<div id="menu">
+	{menu_item}
 	</div>
 
-	<div class="slide">
-		<div class="sliderbutton" id="slideleft" onclick="slideshow.move(-1)"></div>
-		<div id="slider">
-			<ul>
-				<li><img src="skin/slide.png" width="1200px" height="450px" alt="Image One" /></li>
-				<li><img src="skin/slide2.png" width="1200px" height="450px" alt="Image One" /></li>
-			</ul>
+	<div class="content_main">
+		<div class="fotorama" data-loop="true" data-fit="cover" data-transition="dissolve" data-nav="thumbs" data-width="1160" data-height="500">
+			<img src="skin/gl/1.JPG" />
+			<img src="skin/gl/2.JPG" />
+			<img src="skin/gl/3.JPG" />
+			<img src="skin/gl/4.JPG" />
+			<img src="skin/gl/5.JPG" />
+			<img src="skin/gl/6.JPG" />
+			<img src="skin/gl/7.JPG" />
+			<img src="skin/gl/8.JPG" />
+			<img src="skin/gl/9.JPG" />
+			<img src="skin/gl/10.JPG" />
 		</div>
-		<div class="sliderbutton" id="slideright" onclick="slideshow.move(1)"></div>
-
-		<script type="text/javascript" src="skin/option_slider.js"> </script>
-	</div>
+</div>
 	
 	
 </div>

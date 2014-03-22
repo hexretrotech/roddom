@@ -1,7 +1,0 @@
-.sliderbutton {float:left; width:25px; height:235px; cursor:pointer; display:none;}
-#slider {float:left; position:relative; overflow:auto; width:1200px; height:450px; margin:0; padding:0;}
-#slider ul {position:absolute; list-style:none; top:0; left:0; margin:0; padding:0;}
-#slider li {float:left; width:1200px; height:450px;}
-.pagination {position:absolute; top:40px; right:61px; list-style:none; height:25px}
-.pagination li {float:left; cursor:pointer; height:8px; width:8px; background:#ccc; margin:0 4px 0 0; border:1px solid #fff; border-radius:4px;}
-.pagination li:hover, li.current {background:#fff}
