@@ -1,0 +1,8 @@
+<?php
+include 'sql_connect.php';
+echo $x = $_GET['id'];
+	$query = $db->prepare("SELECT * FROM page WHERE id = :id");
+	$query->execute(array(':id' => $_GET['id']));
+	$item = $query->fetchAll(PDO::FETCH_ASSOC);
+	print_r($item);
+?>
