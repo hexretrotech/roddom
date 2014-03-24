@@ -4,7 +4,6 @@ if($_SESSION['auth'] != 1) {
 	header('Location: index.php');
 }
 include 'sql_connect.php';
-$query = $db->query("SELECT * FROM menu");
 	
 	$m = 0;
 	$a = 0;
@@ -58,7 +57,7 @@ $( document ).ready(function() {
         	url:  'edit_main_item.php',
         	data:  {result:JSON.stringify(stuff)},
         	success: function(resp) {
-         		alert(resp);
+         		location.reload();
         	} 
 
       });
@@ -69,11 +68,11 @@ $( document ).ready(function() {
 	});
 
 	$('.edit_main_item').click(function() { 
-		window.location.replace("edit-main-item.php?id=" + $(this).parent('.limain').attr('id'));
+		window.location.replace("./edit-main-item.php?id=" + $(this).parent('.limain').attr('id'));
 	});
 
 	$('#new-item-main').click(function() {
-		window.location.replace("/add_item.php");
+		window.location.replace("./add_item.php");
 	});
 	
 	$( "#save_main" ).disableSelection();
@@ -86,9 +85,9 @@ $( document ).ready(function() {
 <h1>Редактировать структуру</h1>
 <?php
 	echo "<ul id='sortable'>";
-	for($c = 1; $c <= 8; $c++)
+	for($c = 1; $c <= count($menu); $c++)
 	{
-		echo "<li class='limain' id=".$c . "><div class='label_movie'></div>" . $menu[$c][label] . "<button class='rm_main_item'></button><button class='edit_main_item'></button></li>";
+		echo "<li class='limain' id=".$c . " hierarhy=" . $menu[$c][hierarchy] . "><div class='label_movie'></div>" . $menu[$c][label] . "<button class='rm_main_item'></button><button class='edit_main_item'></button></li>";
 	}
 
 ?>

@@ -3,6 +3,7 @@ session_start();
 if($_SESSION['auth'] != 1) {
 	header('Location: index.php');
 }
+$id_edit = $_GET['id'];
 include 'sql_connect.php';
 	
 	$m = 0;
@@ -33,6 +34,7 @@ include 'sql_connect.php';
 		}
 	}
 ?>
+
 <html>
 <head>
 	<title>Панель управления [www.localhost.ru]</title>
@@ -41,59 +43,24 @@ include 'sql_connect.php';
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script src="./jqe.js"></script>
-<script>
-$( document ).ready(function() {
-	$( "#sortable" ).sortable({
-		placeholder: "ui-state-highlight"
-	});
-
-	$( "#sortable" ).disableSelection();
-
-	$("#save_main").click(function() {
-		var stuff = $( "#sortable" ).sortable("toArray");
-		$.ajax({
-       		type:  'post',
-        	cache:  false ,
-        	url:  'edit_main_item.php',
-        	data:  {result:JSON.stringify(stuff)},
-        	success: function(resp) {
-         		location.reload();
-        	} 
-
-      });
-	});
-	$('.rm_main_item').click(function(e) { 
-		var clicked = $(e.target);
-		clicked.parent('.limain').remove();	
-	});
-
-	$('.edit_main_item').click(function() { 
-		window.location.replace("./edit-main-item.php?id=" + $(this).parent('.limain').attr('hierarhy'));
-	});
-
-	$('#new-item-main').click(function() {
-		window.location.replace("./add_item.php");
-	});
-	
-	$( "#save_main" ).disableSelection();
-});
-</script>
 </head>
 <body>
 <?php include "./menu.php"; ?>
 <div class="main_block">
-<h1>Редактировать структуру</h1>
+		<p style="margin-bottom:5px; font-size:16pt">Название пункта:</p>
+			<input id="input_title" value="<?php echo $menu[$id_edit][label] ?>" name="title" />
+<div style="border: 1px solid rgba(0, 0, 0, 0.1); margin-top:20px;">
 <?php
 	echo "<ul id='sortable'>";
-	for($c = 1; $c <= count($menu); $c++)
+	for($c = 1; $c <= count($menu[$id_edit][podpunkt]); $c++)
 	{
-		echo "<li class='limain' id=".$c . " hierarhy=" . $menu[$c][hierarchy] . "><div class='label_movie'></div>" . $menu[$c][label] . "<button class='rm_main_item'></button><button class='edit_main_item'></button></li>";
+		echo "<li class='limain' id=".$c . " hierarhy=" . $menu[$id_edit][podpunkt][$c][hierarchy] . "><div class='label_movie'></div>" . $menu[$id_edit][podpunkt][$c][label] . "<button class='rm_main_item rm_add_item'></button><button class='edit_main_item'></button></li>";
 	}
 
 ?>
 </ul>
 <li class="limain" id="new-item-main"><div class='label_new'></div>Добавить новый пункт</li>
-<button class="save_button" id="save_main" onclick="var a = $( '#sortable' ).sortable( 'toArray' );">Сохранить</button>
+</div>
 </div>
 </body>
 </html>

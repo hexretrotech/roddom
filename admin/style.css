@@ -168,6 +168,7 @@ background-position: -288px -23px;
 #sortable {
 	padding:2px;
 	margin-bottom:0;
+	margin-top:0;
 }
 
 .ui-state-highlight {
