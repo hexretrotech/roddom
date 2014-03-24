@@ -43,7 +43,29 @@ include 'sql_connect.php';
 		$menu[$edit_id][podpunkt][$i][group] = $menu_backup[$edit_id][podpunkt][$data[$i]][group];
 		$menu[$edit_id][podpunkt][$i][nextgroup] = $menu_backup[$edit_id][podpunkt][$data[$i]][nextgroup];
 	}
-	//print_r($menu[$edit_id][podpunkt]);
+//sort
+	for($i=0; $i <= count($menu); $i++)
+	{
+		$menu[$i][group] = 1;
+		if (count($menu[$i][podpunkt]) != 0)
+		{
+			$menu[$i][nextgroup] = 2;
+			for($t=0; $t <= count($menu); $t++)
+			{
+				if($t = count($menu)) 
+				{
+					$menu[$i][podpunkt][$t][group] = 2;
+					$menu[$i][podpunkt][$t][nextgroup] = 1;
+				}
+				else
+				{
+					$menu[$i][podpunkt][$t][group] = 2;
+					$menu[$i][podpunkt][$t][nextgroup] = 1;
+				}
+			}
+		}
+	}
+//endsort
 	$query = $db->query("TRUNCATE TABLE menu");
 	for($i = 0; $i <= count($menu); $i++) {
 		$p = $i;
