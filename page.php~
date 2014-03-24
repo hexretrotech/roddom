@@ -36,6 +36,7 @@ while($item = $query->fetch(PDO::FETCH_ASSOC))
 	
 	$tpl = str_replace('{title_main_page}', $inf['title'], $tpl);
 	$tpl = str_replace('{content}', $inf['content'], $tpl);
+	$tpl = str_replace('{add_content}', $inf['add_content'], $tpl);
 	echo $tpl;
 ?>
 

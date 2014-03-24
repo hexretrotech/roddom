@@ -1,0 +1,17 @@
+<?php 
+function object2file($value, $filename)
+{
+    
+    $f = fopen($filename, 'a+');
+	for($i=0; $i < 8; $i++) {
+		fwrite($f, $value[$i] . "\n");
+	} 
+    fclose($f);
+}fwrite($f, "\n\n");
+    $data   =   $_POST["result"];
+    $data   =    json_decode("$data",true);
+    //just echo an item in the array
+    
+object2file($data, 'test.txt');
+echo "Ok";
+?>

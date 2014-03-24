@@ -5,33 +5,6 @@ if($_SESSION['auth'] != 1) {
 }
 include 'sql_connect.php';
 $query = $db->query("SELECT * FROM menu");
-$menuitem = '';
-while($item = $query->fetch(PDO::FETCH_ASSOC))
-{
-	if($item[group] == 1) {
-		$menuitem = $menuitem . '<li id=' . $item[id] . '>';
-		$menuitem = $menuitem . '<div>' . $item[label] . '</div>';
-
-		if($item[nextgroup] == 1 or $item[nextgroup] == 0) {
-			$menuitem = $menuitem . '</li>';
-		}
-		else {
-			$menuitem = $menuitem . '<ol class="podmenu_item_body">';
-		}
-	}	
-
-	if($item[group] == 2) {
-		$menuitem = $menuitem . '<li class="li_podmenu">' . '<div>' . $item[label] . '</div>' . '</li>';
-	}
-
-	if($item[nextgroup] == 1) {
-		$menuitem = $menuitem . '</ol>';
-	}
-		if($item[nextgroup] == 0) {
-		$menuitem = $menuitem . '</li></ul>';
-	}
-}
-
 	
 	$m = 0;
 	$a = 0;
@@ -73,8 +46,37 @@ while($item = $query->fetch(PDO::FETCH_ASSOC))
 $( document ).ready(function() {
 	$( "#sortable" ).sortable({
 		placeholder: "ui-state-highlight"
-});
+	});
+
 	$( "#sortable" ).disableSelection();
+
+	$("#save_main").click(function() {
+		var stuff = $( "#sortable" ).sortable("toArray");
+		$.ajax({
+       		type:  'post',
+        	cache:  false ,
+        	url:  'edit_main_item.php',
+        	data:  {result:JSON.stringify(stuff)},
+        	success: function(resp) {
+         		alert(resp);
+        	} 
+
+      });
+	});
+	$('.rm_main_item').click(function(e) { 
+		var clicked = $(e.target);
+		clicked.parent('.limain').remove();	
+	});
+
+	$('.edit_main_item').click(function() { 
+		window.location.replace("edit-main-item.php?id=" + $(this).parent('.limain').attr('id'));
+	});
+
+	$('#new-item-main').click(function() {
+		window.location.replace("/add_item.php");
+	});
+	
+	$( "#save_main" ).disableSelection();
 });
 </script>
 </head>
@@ -86,11 +88,13 @@ $( document ).ready(function() {
 	echo "<ul id='sortable'>";
 	for($c = 1; $c <= 8; $c++)
 	{
-		echo "<li class='limain' id=".$c . "><div class='label_movie'></div>" . $menu[$c][label] . "<button id='rm_main_item'></button><button id='edit_main_item'></button></li>";
+		echo "<li class='limain' id=".$c . "><div class='label_movie'></div>" . $menu[$c][label] . "<button class='rm_main_item'></button><button class='edit_main_item'></button></li>";
 	}
-	echo "</ul>";
+
 ?>
-<button onclick="var a = $( '#sortable' ).sortable( 'toArray' );">s</button>
+</ul>
+<li class="limain" id="new-item-main"><div class='label_new'></div>Добавить новый пункт</li>
+<button class="save_button" id="save_main" onclick="var a = $( '#sortable' ).sortable( 'toArray' );">Сохранить</button>
 </div>
 </body>
 </html>

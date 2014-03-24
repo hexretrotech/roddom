@@ -24,7 +24,7 @@ background-size: 100% 100%;
                 </div>
 <div class="input-icon left">
                     <i id="icon-user2"></i>
-                    <input id class="valid" type="text" placeholder="Пароль" name="pas"  required="required">
+                    <input id class="valid" type="password" placeholder="Пароль" name="pas"  required="required">
                 </div>
 <button class="sub" type="submit">Вход</button>
 </form>

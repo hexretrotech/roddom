@@ -27,7 +27,7 @@ while($item = $query->fetch(PDO::FETCH_ASSOC))
 	}
 }
 	$title = "главная";
-	$tpl = file_get_contents('skin/page.html');
+	$tpl = file_get_contents('skin/main.html');
 	$tpl = str_replace('{menu_item}', $menuitem, $tpl);
 
 	$query = $db->prepare("SELECT * FROM page WHERE id = :id");

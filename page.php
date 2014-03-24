@@ -22,10 +22,9 @@ while($item = $query->fetch(PDO::FETCH_ASSOC))
 	if($item[nextgroup] == 1) {
 		$menuitem = $menuitem . '</ul>';
 	}
-		if($item[nextgroup] == 0) {
-		$menuitem = $menuitem . '</li>';
-	}
+	
 }
+$menuitem = $menuitem . '</li>';
 	$title = "главная";
 	$tpl = file_get_contents('skin/page.html');
 	$tpl = str_replace('{menu_item}', $menuitem, $tpl);

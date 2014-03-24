@@ -107,6 +107,7 @@ overflow:visible;
 .valid {
 	padding-left: 33px;
 	border-width:0;
+	width:100%;
 }
 
 input:focus {
@@ -166,6 +167,7 @@ background-position: -288px -23px;
 
 #sortable {
 	padding:2px;
+	margin-bottom:0;
 }
 
 .ui-state-highlight {
@@ -188,8 +190,19 @@ background-position: -288px -23px;
 	background-position: 1px -4px;
 }
 
+.label_new {
+	width:14px;
+	height:25px;
+	float:left;
+	padding-right:20px;
+	background-image: url("add.png");
+	background-repeat: no-repeat;
+	background-size: 19px;
+	background-position: 4px 0px;
+}
 
-#rm_main_item {
+
+.rm_main_item {
 float:right;
 width:18px;
 height:18px;
@@ -200,9 +213,10 @@ border: 1px solid rgba(0, 0, 0, 0.3);
 background-image: url("./glyphicons-halflings.png");
 background-position: -311px 1px;
 outline:none;
+cursor: pointer
 }
 
-#edit_main_item {
+.edit_main_item {
 float:right;	
 width:18px;
 height:18px;
@@ -213,5 +227,17 @@ border: 1px solid rgba(0, 0, 0, 1);
 background-image: url("./glyphicons-halflings.png");
 background-position: -95px -71px;
 outline:none;
+cursor: pointer
 }
 
+.save_button {
+	background-color:white;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	height:40px;
+	border-radius:7px;	
+	cursor: pointer;
+}
+
+#new-item-main {
+	margin: 0 7px 10px 7px;
+}
