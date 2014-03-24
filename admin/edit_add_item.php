@@ -1,6 +1,8 @@
 <?php 
+    $data = $_POST["result"];
+    $data = json_decode("$data",true);
+	$edit_id = $_POST["id"];
 include 'sql_connect.php';
-$query = $db->query("SELECT * FROM menu");
 	
 	$m = 0;
 	$a = 0;
@@ -29,12 +31,22 @@ $query = $db->query("SELECT * FROM menu");
 			
 		}
 	}
-    $data = $_POST["result"];
-    $data = json_decode("$data",true);
-	
+
+	$menu_backup = $menu;
+	unset($menu[$edit_id][podpunkt]);
+
+	for($i=0; $i <= count($data); $i++)
+	{
+		$menu[$edit_id][podpunkt][$i][hierarchy] = $menu_backup[$edit_id][podpunkt][$data[$i]][hierarchy];
+		$menu[$edit_id][podpunkt][$i][src] = $menu_backup[$edit_id][podpunkt][$data[$i]][src];
+		$menu[$edit_id][podpunkt][$i][label] = $menu_backup[$edit_id][podpunkt][$data[$i]][label];
+		$menu[$edit_id][podpunkt][$i][group] = $menu_backup[$edit_id][podpunkt][$data[$i]][group];
+		$menu[$edit_id][podpunkt][$i][nextgroup] = $menu_backup[$edit_id][podpunkt][$data[$i]][nextgroup];
+	}
+	//print_r($menu[$edit_id][podpunkt]);
 	$query = $db->query("TRUNCATE TABLE menu");
-	for($i = 0; $i <= count($data); $i++) {
-		$p = $data[$i];
+	for($i = 0; $i <= count($menu); $i++) {
+		$p = $i;
 		$query = $db->prepare("INSERT INTO menu VALUES ('', :hierarchy , :label , :src , :group, :nextgroup )");
 		$query->execute(array(':hierarchy' => $menu[$p][hierarchy], ':label' => $menu[$p][label], ':src' => $menu[$p][src], ':group' => $menu[$p][group], ':nextgroup' => $menu[$p][nextgroup]));
 		$query->fetch();
