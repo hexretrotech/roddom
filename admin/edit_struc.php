@@ -17,7 +17,6 @@ include 'sql_connect.php';
 			$menu[$m][src] = $item[src];
 			$menu[$m][label] = $item[label];
 			$menu[$m][group] = $item[group];
-			$menu[$m][nextgroup] = $item[nextgroup];
 			$a = 0;
 			
 		}
@@ -28,7 +27,6 @@ include 'sql_connect.php';
 			$menu[$m][podpunkt][$a][src] = $item[src];
 			$menu[$m][podpunkt][$a][label] = $item[label];
 			$menu[$m][podpunkt][$a][group] = $item[group];
-			$menu[$m][podpunkt][$a][nextgroup] = $item[nextgroup];
 			
 		}
 	}

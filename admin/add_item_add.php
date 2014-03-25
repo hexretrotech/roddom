@@ -1,6 +1,6 @@
-<?php 
+<?php
+$id_edit = $_GET['id'];
 include 'sql_connect.php';
-$query = $db->query("SELECT * FROM menu");
 	
 	$m = 0;
 	$a = 0;
@@ -27,12 +27,16 @@ $query = $db->query("SELECT * FROM menu");
 			
 		}
 	}
-    $data = $_POST["result"];
-    $data = json_decode("$data",true);
-	
+$max_hi = 0;
+for($i=0; $i <= count($menu[3][podpunkt]); $i++) {
+	$num = (int)preg_replace('/.[^\d]+/', '', $menu[$id_edit][podpunkt][$i][hierarchy]);
+	if($max_hi < $num) { $max_hi = $num; }
+}
+$hie = $id_edit . "." . ++$max_hi;
+	$menu[$id_edit][podpunkt][] = array(hierarchy => $hie, src => "../page.php?id=" . $hie, label => "Новый пункт", group => 2);
 	$query = $db->query("TRUNCATE TABLE menu");
-	for($i = 0; $i <= count($data); $i++) {
-		$p = $data[$i];
+	for($i = 0; $i <= count($menu); $i++) {
+		$p = $i;
 		$query = $db->prepare("INSERT INTO menu VALUES ('', :hierarchy , :label , :src , :group )");
 		$query->execute(array(':hierarchy' => $menu[$p][hierarchy], ':label' => $menu[$p][label], ':src' => $menu[$p][src], ':group' => $menu[$p][group]));
 		$query->fetch();
@@ -45,4 +49,5 @@ $query = $db->query("SELECT * FROM menu");
 			}
 		}	
 	}
+	header("Location: ./edit-main-item.php?id=$id_edit");
 ?>

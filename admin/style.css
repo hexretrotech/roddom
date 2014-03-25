@@ -239,7 +239,12 @@ cursor: pointer
 	cursor: pointer;
 }
 
-#new-item-main {
+#new-item-main{
+	margin: 0 7px 10px 7px;
+	cursor: pointer;
+}
+
+#new-item-add{
 	margin: 0 7px 10px 7px;
 	cursor: pointer;
 }

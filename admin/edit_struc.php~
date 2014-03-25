@@ -68,7 +68,7 @@ $( document ).ready(function() {
 	});
 
 	$('.edit_main_item').click(function() { 
-		window.location.replace("./edit-main-item.php?id=" + $(this).parent('.limain').attr('hierarhy'));
+		window.location.replace("./edit-main-item.php?id=" + $(this).parent('.limain').attr('id'));
 	});
 
 	$('#new-item-main').click(function() {

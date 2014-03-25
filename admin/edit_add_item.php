@@ -2,6 +2,8 @@
     $data = $_POST["result"];
     $data = json_decode("$data",true);
 	$edit_id = $_POST["id"];
+	$newname = $_POST["label"];
+	$sr = $_POST["sr"];
 include 'sql_connect.php';
 	
 	$m = 0;
@@ -16,7 +18,6 @@ include 'sql_connect.php';
 			$menu[$m][src] = $item[src];
 			$menu[$m][label] = $item[label];
 			$menu[$m][group] = $item[group];
-			$menu[$m][nextgroup] = $item[nextgroup];
 			$a = 0;
 			
 		}
@@ -27,12 +28,13 @@ include 'sql_connect.php';
 			$menu[$m][podpunkt][$a][src] = $item[src];
 			$menu[$m][podpunkt][$a][label] = $item[label];
 			$menu[$m][podpunkt][$a][group] = $item[group];
-			$menu[$m][podpunkt][$a][nextgroup] = $item[nextgroup];
 			
 		}
 	}
 
 	$menu_backup = $menu;
+	$menu[$edit_id][label] = $newname;
+	//if($sr) { $menu[$edit_id][src] = "../page.php?id=" .  $menu[$edit_id][hierarchy]; } else { $menu[$edit_id][src] = "#"; }
 	unset($menu[$edit_id][podpunkt]);
 
 	for($i=0; $i <= count($data); $i++)
@@ -41,42 +43,19 @@ include 'sql_connect.php';
 		$menu[$edit_id][podpunkt][$i][src] = $menu_backup[$edit_id][podpunkt][$data[$i]][src];
 		$menu[$edit_id][podpunkt][$i][label] = $menu_backup[$edit_id][podpunkt][$data[$i]][label];
 		$menu[$edit_id][podpunkt][$i][group] = $menu_backup[$edit_id][podpunkt][$data[$i]][group];
-		$menu[$edit_id][podpunkt][$i][nextgroup] = $menu_backup[$edit_id][podpunkt][$data[$i]][nextgroup];
 	}
-//sort
-	for($i=0; $i <= count($menu); $i++)
-	{
-		$menu[$i][group] = 1;
-		if (count($menu[$i][podpunkt]) != 0)
-		{
-			$menu[$i][nextgroup] = 2;
-			for($t=0; $t <= count($menu); $t++)
-			{
-				if($t = count($menu)) 
-				{
-					$menu[$i][podpunkt][$t][group] = 2;
-					$menu[$i][podpunkt][$t][nextgroup] = 1;
-				}
-				else
-				{
-					$menu[$i][podpunkt][$t][group] = 2;
-					$menu[$i][podpunkt][$t][nextgroup] = 1;
-				}
-			}
-		}
-	}
-//endsort
+
 	$query = $db->query("TRUNCATE TABLE menu");
 	for($i = 0; $i <= count($menu); $i++) {
 		$p = $i;
-		$query = $db->prepare("INSERT INTO menu VALUES ('', :hierarchy , :label , :src , :group, :nextgroup )");
-		$query->execute(array(':hierarchy' => $menu[$p][hierarchy], ':label' => $menu[$p][label], ':src' => $menu[$p][src], ':group' => $menu[$p][group], ':nextgroup' => $menu[$p][nextgroup]));
+		$query = $db->prepare("INSERT INTO menu VALUES ('', :hierarchy , :label , :src , :group )");
+		$query->execute(array(':hierarchy' => $menu[$p][hierarchy], ':label' => $menu[$p][label], ':src' => $menu[$p][src], ':group' => $menu[$p][group]));
 		$query->fetch();
 		
 		if($menu[$p][podpunkt] != 0) {
 			for($t = 0; $t <= count($menu[$p][podpunkt]); $t++) {
-				$query = $db->prepare("INSERT INTO menu VALUES ('', :hierarchy , :label , :src , :group, :nextgroup )");
-				$query->execute(array(':hierarchy' => $menu[$p][podpunkt][$t][hierarchy], ':label' => $menu[$p][podpunkt][$t][label], ':src' => $menu[$p][podpunkt][$t][src], ':group' => $menu[$p][podpunkt][$t][group], ':nextgroup' => $menu[$p][podpunkt][$t][nextgroup]));
+				$query = $db->prepare("INSERT INTO menu VALUES ('', :hierarchy , :label , :src , :group )");
+				$query->execute(array(':hierarchy' => $menu[$p][podpunkt][$t][hierarchy], ':label' => $menu[$p][podpunkt][$t][label], ':src' => $menu[$p][podpunkt][$t][src], ':group' => $menu[$p][podpunkt][$t][group]));
 				$query->fetch();
 			}
 		}	

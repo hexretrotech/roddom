@@ -17,7 +17,7 @@ while($item = $query->fetch(PDO::FETCH_ASSOC))
 	}	
 }
 $free_hierarchy++;
-$query = $db->prepare("INSERT INTO menu VALUES ('', :hierarchy , :label , '', :group, '')");
+$query = $db->prepare("INSERT INTO menu VALUES ('', :hierarchy , :label , '', :group)");
 $query->execute(array(':hierarchy' => $free_hierarchy, ':label' => 'Новый пункт', ':group' => 1));
 $query->fetch();
 header('Location: ./edit_struc.php');

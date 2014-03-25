@@ -18,7 +18,7 @@ include 'sql_connect.php';
 			$menu[$m][src] = $item[src];
 			$menu[$m][label] = $item[label];
 			$menu[$m][group] = $item[group];
-			$menu[$m][nextgroup] = $item[nextgroup];
+			
 			$a = 0;
 			
 		}
@@ -29,7 +29,7 @@ include 'sql_connect.php';
 			$menu[$m][podpunkt][$a][src] = $item[src];
 			$menu[$m][podpunkt][$a][label] = $item[label];
 			$menu[$m][podpunkt][$a][group] = $item[group];
-			$menu[$m][podpunkt][$a][nextgroup] = $item[nextgroup];
+			
 			
 		}
 	}
@@ -53,15 +53,16 @@ $( document ).ready(function() {
 
 	$("#save_add").click(function() {
 		var stuff = $( "#sortable" ).sortable("toArray");
+		var newname = $("#input_title").val();
+		var chek = $("#srr").prop("checked");
 		$.ajax({
        		type:  'post',
         	cache:  false ,
         	url:  'edit_add_item.php',
-        	data:  {result:JSON.stringify(stuff), id:<?php echo $id_edit; ?>},
+        	data:  {result:JSON.stringify(stuff), id:<?php echo $id_edit; ?>, label: newname},
         	success: function(resp) {
-				alert(resp);
-location.reload();
-         	//	window.location.replace("./edit_struc.php");
+
+         		window.location.replace("./edit_struc.php");
         	} 
 
       });
@@ -72,11 +73,11 @@ location.reload();
 	});
 
 	$('.edit_add_item').click(function() { 
-		window.location.replace("./edit-add-item.php?id=" + $(this).parent('.limain').attr('id'));
+		window.location.replace("./edit-add-item.php?id=" + $(this).parent('.limain').attr('hierarhy'));
 	});
 
 	$('#new-item-add').click(function() {
-		window.location.replace("./add_item_add.php");
+		window.location.replace("./add_item_add.php?id=" + <?php echo $id_edit ?>);
 	});
 	
 	$( "#save_add" ).disableSelection();
@@ -99,7 +100,7 @@ location.reload();
 
 ?>
 </ul>
-<li class="limain" id="new-item-main"><div class='label_new'></div>Добавить новый пункт</li>
+<li class="limain" id="new-item-add"><div class='label_new'></div>Добавить новый пункт</li>
 </div>
 <button class="save_button" id="save_add" onclick="var a = $( '#sortable' ).sortable( 'toArray' );">Сохранить</button>
 </div>

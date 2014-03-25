@@ -177,6 +177,7 @@ hr {
 
 .podmenu_item_body {
 	width: 100px;
+	height: 100px;
 	background-color: white;
 	box-shadow: 0px 4px 7px 3px rgba(0, 0, 0, .1);
 	border-radius: 10px;
