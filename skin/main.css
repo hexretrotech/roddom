@@ -15,4 +15,20 @@
 
 .content_main {
 width:1160px;
-height:773px;
+}
+.over-layout {
+	z-index:99;
+	position:absolute;
+	top:0;
+left:0;
+right:0;
+bottom:0;
+	background-color:white;
+}
+
+#text-layout {
+	display:block;
+	width:600px;
+font-family: Times New Roman;
+}
+

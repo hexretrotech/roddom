@@ -33,7 +33,7 @@
 	}
 
 for($i = 1; $i <= count($menu); $i++) {
-	echo '<li class="li_menu p_edit"><a class="menu_link" href="edit_page.php?id=' . $menu[$i][hierarchy] . '">' . $menu[$i][label] . '</a></li>';
+	echo '<li class="li_menu p_edit"><a class="menu_link" href="edit_page.php?id=' . $menu[$i][hierarchy] . '">' . $menu[$i][label] . '</a><a class="editstruc-removeitem button-edit-frame"><i class="icon-remove"></i>Удалить</a></li>';
 
 	if(count($menu[$i][podpunkt]) != 0) {
 		echo "<ul>";
@@ -46,6 +46,8 @@ for($i = 1; $i <= count($menu); $i++) {
 ?>
 				<hr>
 				<li class="li_menu p_edit"><a class="menu_link" ONCLICK="window.open('../ckfsys-master/browser/default/browser.html?Connector=/ckfsys-master/connectors/php/connector.php','','Toolbar=1,Location=0,Directories=0,Status=0,Menubar=0,Scrollbars=0,Resizable=0,Width=550,Height=400' );" href="#" >Файловый менеджер</a></li>
+				<hr>
+				<li class="li_menu p_edit"><a class="menu_link" href="edit_color.php">Редактор цвета</a></li>
 				<hr>
 				<li class="li_menu p_edit"><a class="menu_link" href="exit.php">Выход</a></li>
 			</ul>

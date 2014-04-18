@@ -1,0 +1,59 @@
+.editcolor-save {
+	padding: 30px 20px 20px 190px;
+	height:31px;
+	background-color: #f5f5f5;
+	border-top: 1px solid #e5e5e5;
+}
+
+.editcolor-savebutton {
+	background-color: #4d90fe;
+	color:white;
+	margin-right:2px;
+	padding: 10px 14px;
+}
+
+.orange {
+	border: 1px solid #F09108;
+}
+
+.orange-title {
+	background-color:#F09108;
+	height:27px;
+}
+
+.control-label {
+	margin-top: 0px;
+	text-align: right;
+	display:block;
+	width: 130px;
+	float:left;
+}
+
+.edit-color {
+	padding: 10px;
+	position: relative;
+	border-left: 1px solid #eee;
+	margin-left:140px;
+	margin-top: -10px;
+	margin-bottom: -10px;
+	padding:10px;
+}
+
+.main-name {
+	width:100%;
+	padding: 4px 6px;
+	font-size: 20px;
+	border: 1px solid #ccc;
+}
+
+.edit-color > span {
+	margin-top:6px;
+	color: #595959;
+	font-size: 13px;
+}
+
+.edit-item {
+	border-bottom: 1px solid #eee;
+	margin-bottom: 15px;
+	padding:10px;
+}

@@ -22,8 +22,6 @@ $query = $db->prepare("SELECT * FROM page WHERE id = :id");
 	<div class="main_block">
 		<form action="edit_page_action.php" method="POST">
 			<input type=hidden name=id value="<?php echo $_GET['id']; ?>">
-			<p style="margin-bottom:5px; font-size:16pt">Заголовок страницы:</p>
-			<input id="input_title" value="<?php echo $inf['title']; ?>" name="title" />
 			<p  style="margin-bottom:5px; font-size:16pt">Содержимое:</p>
 			<textarea class="ckeditor" name="content"><?php echo $inf['content']; ?></textarea>
 			<p style="margin-bottom:5px; font-size:16pt">Дополнительная информация:</p>

@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>Панель управления [www.localhost.ru]</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="./stylesheet/font-family.css">
+	<link rel="stylesheet" type="text/css" href="./stylesheet/style.css">
+	
+</head>
+<body>
+	<?php include "./include/head.php"; ?>
+	<div class="scrolled">
+		<?php include "./include/left.php"; ?>
+		<div class="content bloks_content">
+			<div class="name-page"><i id="icon-home"></i>Домашняя страница</div>
+
+			
+		</div>
+	</div>
+</body>
+</html>

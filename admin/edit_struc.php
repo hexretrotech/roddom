@@ -55,7 +55,8 @@ $( document ).ready(function() {
         	url:  'edit_main_item.php',
         	data:  {result:JSON.stringify(stuff)},
         	success: function(resp) {
-         		location.reload();
+				alert(resp);
+         		//location.reload();
         	} 
 
       });

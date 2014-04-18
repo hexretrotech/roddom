@@ -1,31 +1,25 @@
 <?php
 include '../sql_connect.php';
 $query = $db->query("SELECT * FROM menu");
+$first_item = 0;
+$add_i = 0;
 while($item = $query->fetch(PDO::FETCH_ASSOC))
 {
-	if($item[group] == 1) {
-		$menuitem = $menuitem . '<li class="menuitem">';
-		$menuitem = $menuitem . '<div style="display: table; width: 100%; height: 100%"><a class="menu_a" href=' . $item[src] . '>' . $item[label] . '</a></div>';
-
-		if($item[nextgroup] == 1 or $item[nextgroup] == 0) {
-			$menuitem = $menuitem . '</li>';
-		}
-		else {
-			$menuitem = $menuitem . '<div class="add_item"><div class="podmenu_item"><ul class="podmenu_item_body">';
-		}
-	}	
-
-	if($item[group] == 2) {
-		$menuitem = $menuitem . '<li class="li_podmenu"><a class="a_podmenu" href="' . $item[src] .'">' . $item[label] . '</a></li>';
+	if($first_item == 0) {
+		$menuitem = $menuitem . '<li class="menuitem"><div style="display: table; width: 100%; height: 100%"><a class="menu_a" href=' . $item[src] . '>' . $item[label] . '</a></div>';
+		$first_item = 1;
 	}
-
-	if($item[nextgroup] == 1) {
-		$menuitem = $menuitem . '</ul>';
-	}
-		if($item[nextgroup] == 0) {
-		$menuitem = $menuitem . '</li>';
+	else {
+		if($item[group] == 1) {
+			if($add_i == 1) { $menuitem = $menuitem . '</ul></div></div>'; $add_i = 0;}
+			$menuitem = $menuitem . '</li><li class="menuitem"><div style="display: table; width: 100%; height: 100%"><a class="menu_a" href=' . $item[src] . '>' . $item[label] . '</a></div>';
+		} else {
+			if($add_i == 0) { $menuitem = $menuitem . '<div class="add_item"><div class="podmenu_item"><ul class="podmenu_item_body">'; $add_i = 1;}
+			$menuitem = $menuitem . '<li class="li_podmenu"><a class="a_podmenu" href="' . $item[src] .'">' . $item[label] . '</a></li>';
+		}
 	}
 }
+$menuitem = $menuitem . '</li>';
 function coin($arg) {
 $dir = opendir("../files/images/gallery/" . $arg);
 $count = 0;
@@ -65,7 +59,7 @@ $( document ).ready(function() {
 
 <div id="wrapg">
 	<div class="head">
-		<div class="title_name"><div style="display: table; width: 100%; height: 100%"><div style="display:table-cell; vertical-align:middle;">ГУЗ Липецкий городской родильный дом №1</div></div></div>
+		<div class="title_name"><div style="display: table; width: 100%; height: 100%"><div style="display:table-cell; vertical-align:middle;">ГУЗ "Липецкий городской родильный дом"</div></div></div>
 	</div>
 	
 	<div id="menu">

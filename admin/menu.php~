@@ -33,12 +33,12 @@
 	}
 
 for($i = 1; $i <= count($menu); $i++) {
-	echo '<li class="li_menu p_edit"><a class="menu_link" href="edit_page?id=' . $menu[$i][hierarchy] . '">' . $menu[$i][label] . '</a></li>';
+	echo '<li class="li_menu p_edit"><a class="menu_link" href="edit_page.php?id=' . $menu[$i][hierarchy] . '">' . $menu[$i][label] . '</a></li>';
 
 	if(count($menu[$i][podpunkt]) != 0) {
 		echo "<ul>";
 		for($t = 1; $t <= count($menu[$i][podpunkt]); $t++) {
-			echo '<li class="li_menu p_edit"><a class="menu_link" href="edit_page?id=' . $menu[$i][podpunkt][$t][hierarchy] . '">' . $menu[$i][podpunkt][$t][label] . '</a></li>';
+			echo '<li class="li_menu p_edit"><a class="menu_link" href="edit_page.php?id=' . $menu[$i][podpunkt][$t][hierarchy] . '">' . $menu[$i][podpunkt][$t][label] . '</a></li>';
 		}
 		echo "</ul>";
 	}

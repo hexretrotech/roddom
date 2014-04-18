@@ -1,40 +1,17 @@
-<?php
-include 'sql_connect.php';
-$query = $db->query("SELECT * FROM menu");
-while($item = $query->fetch(PDO::FETCH_ASSOC))
-{
-	if($item[group] == 1) {
-		$menuitem = $menuitem . '<li class="menuitem">';
-		$menuitem = $menuitem . '<div style="display: table; width: 100%; height: 100%"><a class="menu_a" href=' . $item[src] . '>' . $item[label] . '</a></div>';
-
-		if($item[nextgroup] == 1 or $item[nextgroup] == 0) {
-			$menuitem = $menuitem . '</li>';
-		}
-		else {
-			$menuitem = $menuitem . '<div class="add_item"><div class="podmenu_item"><ul class="podmenu_item_body">';
-		}
-	}	
-
-	if($item[group] == 2) {
-		$menuitem = $menuitem . '<li class="li_podmenu"><a class="a_podmenu" href="' . $item[src] .'">' . $item[label] . '</a></li>';
-	}
-
-	if($item[nextgroup] == 1) {
-		$menuitem = $menuitem . '</ul>';
-	}
-
-}
-	$menuitem = $menuitem . '</li>';
-	$title = "главная";
-	$tpl = file_get_contents('skin/main.html');
-	$tpl = str_replace('{menu_item}', $menuitem, $tpl);
-
-	$query = $db->prepare("SELECT * FROM page WHERE id = :id");
-	$query->execute(array(':id' => $_GET['id']));
-	$inf = $query->fetch(PDO::FETCH_ASSOC);
-	
-	$tpl = str_replace('{title_main_page}', $inf['title'], $tpl);
-	$tpl = str_replace('{content}', $inf['content'], $tpl);
-	echo $tpl;
-?>
-
+<html>
+<head> 
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.js"></script>
+	<script>
+	$( document ).ready(function() {
+			$("#wrap").fadeIn(2000, function() { window.location.href = "./main.php"; });
+	});
+	</script>
+	<title>
+	</title>
+</head>
+<body style="margin:0;">
+<div id="wrap" style="width:680px; height:350px; position:absolute; top:50%; left:50%; margin-top: -175px; margin-left: -340px; background-color:white; text-align:center; display:none;">
+	<p style="font-size:25pt;">Добро пожаловать<br> на официальный сайт<br> ГУЗ "Липецкий городской родильный дом"</p>
+</div>
+</body>
+</html>
