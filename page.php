@@ -1,5 +1,6 @@
 <?php
 include 'sql_connect.php';
+include './stat.php';
 $query = $db->query("SELECT * FROM menu");
 $first_item = 0;
 $add_i = 0;
@@ -42,7 +43,7 @@ $menuitem = $menuitem . '</li>';
 		</div>';
 	$tpl = str_replace('{title_main_page}', $q, $tpl);
 	$tpl = str_replace('{content}', $inf['content'], $tpl);
-if(!($inf['add_content'] == "none")) {
+if(!($inf['add_content'] == "")) {
 	$tpl = str_replace('{add_content}', $ac, $tpl);
 } else {
 	$tpl = str_replace('{add_content}', "", $tpl);
@@ -54,12 +55,22 @@ while($item = $query->fetch(PDO::FETCH_ASSOC)) {
 	$background_bottom_menu = $item['background_bottom_menu'];
 	$background_content = $item['background_content'];
 	$background_body = $item['background_body'];
+	$color_menu_text = $item['color_menu_text'];
+	$color_border_subparagraph = $item['color_border_subparagraph'];
+	$background_subparagraph_top = $item['background_subparagraph_top'];
+	$background_subparagraph_bottom = $item['background_subparagraph_bottom'];
+	$color_text_top = $item['color_text_top'];
 }
 $tpl = str_replace('$bodycolor$', $background_body, $tpl);
 $tpl = str_replace('$headcolor$', $background_title, $tpl);
 $tpl = str_replace('$topmenucolor$', $background_top_menu, $tpl);
 $tpl = str_replace('$bottommenucolor$', $background_bottom_menu, $tpl);
 $tpl = str_replace('$contentcolor$', $background_content, $tpl);
+$tpl = str_replace('$textcolor$', $color_menu_text, $tpl);
+$tpl = str_replace('$topadd$', $background_subparagraph_top, $tpl);
+$tpl = str_replace('$bottomadd$', $background_subparagraph_bottom, $tpl);
+$tpl = str_replace('$bord$', $color_border_subparagraph, $tpl);
+$tpl = str_replace('$toptext$', $color_text_top, $tpl);
 	echo $tpl;
 ?>
 

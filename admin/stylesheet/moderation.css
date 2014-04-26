@@ -1,0 +1,42 @@
+table {
+	font-size: 14px;
+	text-align:center;
+	border-spacing: 0 2px;
+	width:100%;
+}
+
+.fiolet {
+	border: 1px solid #852b99;
+}
+
+.fiolet-title {
+	background-color:#852b99;
+	height:27px;
+}
+
+button {
+	width:32px;
+	height:32px;
+}
+
+.icon-save {
+	margin:0;
+}
+
+.remove {
+	background-color:#d84a38;
+	border:0;
+}
+
+.good {
+	background-color: #35aa47;
+	border:0;
+}
+
+td {
+	padding: 4px;
+	background-color: #eee;
+}
+.edit-body:last-child {
+
+}

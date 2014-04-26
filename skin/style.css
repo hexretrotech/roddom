@@ -18,10 +18,11 @@ p {
 
 .head {
 	overflow: hidden;
-	height: 100px;
+	height: 60px;
 	display:block;
 	padding:7px;
 	text-align:center;
+	padding-top:0;
 }
 
 
@@ -114,6 +115,7 @@ hr {
 	font-size:10pt;
 	padding: 7px;
 	font-weight: bold;
+	color: rgba(0, 0, 0, 0.7);
 	display:table-cell;
 	vertical-align:middle;
 	height: 100%;
@@ -193,6 +195,8 @@ hr {
 	padding: 13;
 	white-space: nowrap;
 	color: rgba(0, 0, 0, 0.7);
+	background-image: -webkit-linear-gradient(top, #fcfeff 2%, #F1F1F1 100%);
+	margin:0;
 }
 
 
@@ -200,6 +204,7 @@ hr {
 .a_podmenu {
 	display:block;
 	text-decoration:none;
+	color: rgba(0, 0, 0, 0.7);
 	text-align:left;
 }
 

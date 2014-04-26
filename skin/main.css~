@@ -12,22 +12,3 @@
 	background: linear-gradient(to top, #fff, #EEEEEC);
 
 }
-
-.content_main {
-width:1160px;
-}
-.over-layout {
-	z-index:99;
-	position:absolute;
-	top:0;
-left:0;
-right:0;
-bottom:0;
-	background-color:white;
-}
-
-#text-layout {
-	display:block;
-	width:600px;
-}
-

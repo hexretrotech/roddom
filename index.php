@@ -1,12 +1,15 @@
 <html>
 <head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.js"></script>
 	<script>
 	$( document ).ready(function() {
-			$("#wrap").fadeIn(2000, function() { window.location.href = "./main.php"; });
+	
+			$("#wrap").fadeIn(2000).delay(1000).queue(function() { window.location.href = "./main.php";});
 	});
 	</script>
 	<title>
+ГУЗ "Липецкий городской родильный дом"
 	</title>
 </head>
 <body style="margin:0;">

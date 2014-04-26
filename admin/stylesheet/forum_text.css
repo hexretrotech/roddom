@@ -1,0 +1,40 @@
+
+.fiolet {
+	border: 1px solid #852b99;
+}
+
+.fiolet-title {
+	background-color:#852b99;
+	height:27px;
+}
+
+
+
+.icon-save {
+	margin:0;
+}
+
+
+
+.button-edit-frame {
+	background-color:#35aa47;
+	color:white;
+	float:right;
+	margin-top: -4px;
+	padding: 5px;
+}
+
+.editpage-save {
+	padding: 30px 20px 20px 190px;
+	height:31px;
+	background-color: #f5f5f5;
+	border-top: 1px solid #e5e5e5;
+}
+
+.editpage-savebutton {
+	background-color: #F09108;
+	color:white;
+	margin-right:2px;
+	padding: 10px 14px;
+	border-width:0px;
+}

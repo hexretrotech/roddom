@@ -1,0 +1,215 @@
+<html>
+<head>
+	<script src="skin/jquery-1.10.2.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="skin/main.css"> 
+	<link rel="stylesheet" type="text/css" href="skin/style.css">
+		<!-- jQuery Plugin scripts -->
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.js"></script>
+		<script type="text/javascript" src="./skin/slider/js/external/jquery.easing.1.3.min.js"></script>
+		<script type="text/javascript" src="./skin/slider/js/external/jquery.mousewheel.min.js"></script>
+		
+		<!-- Slider Kit scripts -->
+		<script type="text/javascript" src="./skin/slider/js/sliderkit/jquery.sliderkit.1.9.2.pack.js"></script>
+		<script type="text/javascript" src="./skin/slider/js/sliderkit/addons/sliderkit.counter.1.0.pack.js"></script>
+		<script type="text/javascript" src="./skin/slider/js/sliderkit/addons/sliderkit.imagefx.1.0.pack.js"></script>
+		<script type="text/javascript" src="./skin/slider/js/sliderkit/addons/sliderkit.delaycaptions.1.1.pack.js"></script>
+<link rel="stylesheet" type="text/css" href="./skin/slider/css/sliderkit-core.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="./skin/slider/css/sliderkit-demos.css" media="screen, projection" />
+		
+		<!-- Slider Kit compatibility -->	
+		<!--[if IE 6]><link rel="stylesheet" type="text/css" href="../lib/css/sliderkit-demos-ie6.css" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" type="text/css" href="../lib/css/sliderkit-demos-ie7.css" /><![endif]-->
+		<!--[if IE 8]><link rel="stylesheet" type="text/css" href="../lib/css/sliderkit-demos-ie8.css" /><![endif]-->
+
+		<!-- Site styles -->
+		<link rel="stylesheet" type="text/css" href="./skin/slider/css/sliderkit-site.css" media="screen, projection" />
+	<script type="text/javascript">
+$( document ).ready(function() {
+	$('#menu li').hover(function () {
+     clearTimeout($.data(this,'timer'));
+     $('.add_item',this).stop(true,true).fadeIn(100);
+  }, function () {
+    $.data(this,'timer', setTimeout($.proxy(function() {
+      $('.add_item',this).stop(true,true).fadeOut(100);
+    }, this), 100));
+  });
+
+$(".delaycaptions-03").sliderkit({
+					circular:true,
+					mousewheel:true,
+					shownavitems:9,
+					verticalnav:true,
+					navclipcenter:true,
+					auto:true,
+					autospeed:5000,
+					autostill:true,
+					//panelfx:'fancy',
+					imagefx:{
+						fxType: 'random' // curtain, zipper, wave, fountain, random
+					},
+				//	delaycaptions:{
+				//		delay:10,
+					//	transition:'fading',
+					//	duration:600
+				//	},
+					counter:true,
+					debug:1
+				});
+});
+	</script>
+		<link rel="stylesheet" type="text/css" href="./skin/slider/css/sliderkit-core.css" media="screen, projection" />
+		<link rel="stylesheet" type="text/css" href="./skin/slider/css/sliderkit-demos.css" media="screen, projection" />
+		
+		<!-- Slider Kit compatibility -->	
+		<!--[if IE 6]><link rel="stylesheet" type="text/css" href="../lib/css/sliderkit-demos-ie6.css" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" type="text/css" href="../lib/css/sliderkit-demos-ie7.css" /><![endif]-->
+		<!--[if IE 8]><link rel="stylesheet" type="text/css" href="../lib/css/sliderkit-demos-ie8.css" /><![endif]-->
+
+		<!-- Site styles -->
+		<link rel="stylesheet" type="text/css" href="./skin/slider/css/sliderkit-site.css" media="screen, projection" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<title>Главная | ГУЗ Липецкий городской родильный дом №1</title>
+	<style>
+	body { background-color: $bodycolor$; }
+	.head { background-color: $headcolor$; }
+	#menu { background-image: -webkit-linear-gradient(top, $topmenucolor$ 2%, $bottommenucolor$ 100%); }
+	.content_main { background-color: $contentcolor$; }
+	.menu_a, .a_podmenu { color: $textcolor$; }
+	.li_podmenu { background-image: -webkit-linear-gradient(top, $topadd$ 2%, $bottomadd$ 100%); }
+	.podmenu_item_body { border:2px solid $bord$; }
+	</style>
+</head>
+<body>
+<div id="wrapg">
+	<div class="head" style="display:none">
+		<div class="title_name"><div style="display: table; width: 100%; height: 100%"><div style="display:table-cell; vertical-align:middle;">ГУЗ "Липецкий городской родильный дом"</div></div></div>
+	</div>
+	
+	<div id="menu">
+	{menu_item}
+	</div>
+
+	<div class="content_main">
+		<div class="sliderkit photosgallery-vertical delaycaptions-03">
+					<div class="sliderkit-nav">						
+						<div class="sliderkit-nav-clip">
+							<ul>
+								<li><a href="#" rel="nofollow" title="[link title]"><img src="./skin/gl/min/mini-1.JPG" alt="[Alternative text]" /></a></li>
+								<li><a href="#" rel="nofollow" title="[link title]"><img src="./skin/gl/min/mini-2.JPG" alt="[Alternative text]" /></a></li>
+								<li><a href="#" rel="nofollow" title="[link title]"><img src="./skin/gl/min/mini-3.JPG" alt="[Alternative text]" /></a></li>
+								<li><a href="#" rel="nofollow" title="[link title]"><img src="./skin/gl/min/mini-4.JPG" alt="[Alternative text]" /></a></li>
+								<li><a href="#" rel="nofollow" title="[link title]"><img src="./skin/gl/min/mini-5.JPG" alt="[Alternative text]" /></a></li>
+								<li><a href="#" rel="nofollow" title="[link title]"><img src="./skin/gl/min/mini-6.JPG" alt="[Alternative text]" /></a></li>
+								<li><a href="#" rel="nofollow" title="[link title]"><img src="./skin/gl/min/mini-7.JPG" alt="[Alternative text]" /></a></li>
+								<li><a href="#" rel="nofollow" title="[link title]"><img src="./skin/gl/min/mini-8.JPG" alt="[Alternative text]" /></a></li>
+								<li><a href="#" rel="nofollow" title="[link title]"><img src="./skin/gl/min/mini-9.JPG" alt="[Alternative text]" /></a></li>
+							</ul>
+						</div>
+						<div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-prev"><a rel="nofollow" href="#" title="Previous line"><span>Previous</span></a></div>
+						<div class="sliderkit-btn sliderkit-nav-btn sliderkit-nav-next"><a rel="nofollow" href="#" title="Next line"><span>Next</span></a></div>
+					</div>
+					<div class="sliderkit-panels">
+
+						<div class="sliderkit-count sliderkit-count-items">
+							<span class="sliderkit-count-current"></span><span class="sliderkit-count-sep">/</span><span class="sliderkit-count-total"></span>
+						</div>
+						<div class="sliderkit-panel">
+							<img src="./skin/gl/1.JPG" alt="[Alternative text]" />
+<!--							<div class="sliderkit-panel-textbox">-->
+<!--								<div class="sliderkit-panel-text">-->
+<!--									<h4>sample-01.jpg</h4>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>-->
+<!--								</div>-->
+<!--								<div class="sliderkit-panel-overlay"></div>-->
+<!--							</div>-->
+						</div>
+						<div class="sliderkit-panel">
+							<img src="./skin/gl/2.JPG" alt="[Alternative text]" />
+<!--							<div class="sliderkit-panel-textbox">-->
+<!--								<div class="sliderkit-panel-text">-->
+<!--									<h4>sample-02.jpg</h4>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>-->
+<!--								</div>-->
+<!--								<div class="sliderkit-panel-overlay"></div>-->
+<!--							</div>-->
+						</div>
+						<div class="sliderkit-panel">
+							<img src="./skin/gl/3.JPG" alt="[Alternative text]" />
+<!--							<div class="sliderkit-panel-textbox">-->
+<!--								<div class="sliderkit-panel-text">-->
+<!--									<h4>sample-03.jpg</h4>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>-->
+<!--								</div>-->
+<!--								<div class="sliderkit-panel-overlay"></div>-->
+<!--							</div>-->
+						</div>
+						<div class="sliderkit-panel">
+							<img src="./skin/gl/4.JPG" alt="[Alternative text]" />
+<!--							<div class="sliderkit-panel-textbox">-->
+<!--								<div class="sliderkit-panel-text">-->
+<!--									<h4>sample-04.jpg</h4>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>-->
+<!--								</div>-->
+<!--								<div class="sliderkit-panel-overlay"></div>-->
+<!--							</div>-->
+						</div>
+						<div class="sliderkit-panel">
+							<img src="./skin/gl/5.JPG" alt="[Alternative text]" />
+<!--							<div class="sliderkit-panel-textbox">-->
+<!--								<div class="sliderkit-panel-text">-->
+<!--									<h4>sample-05.jpg</h4>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>-->
+<!--								</div>-->
+<!--								<div class="sliderkit-panel-overlay"></div>-->
+<!--							</div>-->
+						</div>
+						<div class="sliderkit-panel">
+							<img src="./skin/gl/6.JPG" alt="[Alternative text]" />
+<!--							<div class="sliderkit-panel-textbox">-->
+<!--								<div class="sliderkit-panel-text">-->
+<!--									<h4>sample-06.jpg</h4>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>-->
+<!--								</div>-->
+<!--								<div class="sliderkit-panel-overlay"></div>-->
+<!--							</div>-->
+						</div>
+						<div class="sliderkit-panel">
+							<img src="./skin/gl/7.JPG" alt="[Alternative text]" />
+<!--							<div class="sliderkit-panel-textbox">-->
+<!--								<div class="sliderkit-panel-text">-->
+<!--									<h4>sample-07.jpg</h4>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>-->
+<!--								</div>-->
+<!--								<div class="sliderkit-panel-overlay"></div>-->
+<!--							</div>-->
+						</div>
+						<div class="sliderkit-panel">
+							<img src="./skin/gl/8.JPG" alt="[Alternative text]" />
+<!--							<div class="sliderkit-panel-textbox">-->
+<!--								<div class="sliderkit-panel-text">-->
+<!--									<h4>sample-07.jpg</h4>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>-->
+<!--								</div>-->
+<!--								<div class="sliderkit-panel-overlay"></div>-->
+<!--							</div>-->
+						</div>
+						<div class="sliderkit-panel">
+							<img src="./skin/gl/9.JPG" alt="[Alternative text]" />
+<!--							<div class="sliderkit-panel-textbox">-->
+<!--								<div class="sliderkit-panel-text">-->
+<!--									<h4>sample-07.jpg</h4>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>-->
+<!--								</div>-->
+<!--								<div class="sliderkit-panel-overlay"></div>-->
+<!--							</div>-->
+						</div>
+					</div>
+				</div>
+</div>
+	
+	
+</div>
+</body>
+</html>
+	 

@@ -1,5 +1,6 @@
 <?php
 include 'sql_connect.php';
+include './stat.php';
 $query = $db->query("SELECT * FROM menu");
 $first_item = 0;
 $add_i = 0;
@@ -30,7 +31,7 @@ $menuitem = $menuitem . '</li>';
 	
 	$tpl = str_replace('{title_main_page}', $inf['title'], $tpl);
 	$tpl = str_replace('{content}', $inf['content'], $tpl);
-	$query = $db->query("SELECT * FROM color");
+$query = $db->query("SELECT * FROM color");
 while($item = $query->fetch(PDO::FETCH_ASSOC)) {
 	$background_title = $item['background_title'];
 	$background_top_menu = $item['background_top_menu'];
@@ -41,6 +42,7 @@ while($item = $query->fetch(PDO::FETCH_ASSOC)) {
 	$color_border_subparagraph = $item['color_border_subparagraph'];
 	$background_subparagraph_top = $item['background_subparagraph_top'];
 	$background_subparagraph_bottom = $item['background_subparagraph_bottom'];
+	$color_text_top = $item['color_text_top'];
 }
 $tpl = str_replace('$bodycolor$', $background_body, $tpl);
 $tpl = str_replace('$headcolor$', $background_title, $tpl);
@@ -51,6 +53,17 @@ $tpl = str_replace('$textcolor$', $color_menu_text, $tpl);
 $tpl = str_replace('$topadd$', $background_subparagraph_top, $tpl);
 $tpl = str_replace('$bottomadd$', $background_subparagraph_bottom, $tpl);
 $tpl = str_replace('$bord$', $color_border_subparagraph, $tpl);
+$tpl = str_replace('$toptext$', $color_text_top, $tpl);
+
+$slide;
+$path = $_SERVER['DOCUMENT_ROOT'] . '/files/mainslide/';
+$images = scandir($path);
+if (false !== $images) {
+    $images = preg_grep('/\\.(?:png|gif|jpe?g|JPG)$/', $images);
+    foreach ($images as $image)
+        $slide = $slide . "<img src='/files/mainslide/" . htmlspecialchars(urlencode($image)) . "' />";
+}
+$tpl = str_replace('$slide$', $slide, $tpl);
 	echo $tpl;
 ?>
 

@@ -1,5 +1,6 @@
 <?php
 include '../sql_connect.php';
+include '../stat.php';
 $query = $db->query("SELECT * FROM menu");
 $first_item = 0;
 $add_i = 0;
@@ -31,6 +32,19 @@ while($file = readdir($dir)){
 }
 return $count - 1;
 }
+
+$query = $db->query("SELECT * FROM color");
+while($item = $query->fetch(PDO::FETCH_ASSOC)) {
+	$background_title = $item['background_title'];
+	$background_top_menu = $item['background_top_menu'];
+	$background_bottom_menu = $item['background_bottom_menu'];
+	$background_content = $item['background_content'];
+	$background_body = $item['background_body'];
+	$color_menu_text = $item['color_menu_text'];
+	$color_border_subparagraph = $item['color_border_subparagraph'];
+	$background_subparagraph_top = $item['background_subparagraph_top'];
+	$background_subparagraph_bottom = $item['background_subparagraph_bottom'];
+}
 ?>
 
 <html>
@@ -54,6 +68,15 @@ $( document ).ready(function() {
 });
 	</script>
 	<title>Галерея | ГУЗ Липецкий городской родильный дом №1</title>
+	<style>
+	body { background-color: <?php echo $background_body; ?>; }
+	.head { background-color: <?php echo $background_title; ?>; }
+	#menu { background-image: -webkit-linear-gradient(top, <?php echo $background_top_menu; ?> 2%, <?php echo $background_bottom_menu; ?> 100%); }
+	.content_main { background-color: <?php echo $background_content; ?>; }
+	.menu_a, .a_podmenu { color: <?php echo $color_menu_text; ?>; }
+	.li_podmenu { background-image: -webkit-linear-gradient(top, <?php echo $background_subparagraph_top; ?> 2%, <?php echo $background_subparagraph_bottom; ?> 100%); }
+	.podmenu_item_body { border:2px solid <?php echo $color_border_subparagraph; ?>; }
+	</style>
 </head>
 <body <?php if(isset($_GET['album'])) { echo "style='overflow:hidden;'"; } ?>>
 

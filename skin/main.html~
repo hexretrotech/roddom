@@ -1,35 +1,18 @@
 <html>
 <head>
-	<script src="skin/jquery-1.10.2.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="skin/main.css">
-	<link  href="//fotorama.s3.amazonaws.com/4.4.9/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
-<script src="//fotorama.s3.amazonaws.com/4.4.9/fotorama.js"></script> 
+	<link  href="http://fotorama.s3.amazonaws.com/4.4.9/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+<script src="http://fotorama.s3.amazonaws.com/4.4.9/fotorama.js"></script> 
 	<link rel="stylesheet" type="text/css" href="skin/style.css">
-	<script type="text/javascript">
-$( document ).ready(function() {
-	$('#menu li').hover(function () {
-     clearTimeout($.data(this,'timer'));
-     $('.add_item',this).stop(true,true).fadeIn(100);
-  }, function () {
-    $.data(this,'timer', setTimeout($.proxy(function() {
-      $('.add_item',this).stop(true,true).fadeOut(100);
-    }, this), 100));
-  });
-});
-	</script>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.js"></script>
+	<script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.js"></script>
 	<title>Главная | ГУЗ Липецкий городской родильный дом №1</title>
-	<style>
-	body { background-color: $bodycolor$; }
-	.head { background-color: $headcolor$; }
-	#menu { background-image: -webkit-linear-gradient(top, $topmenucolor$ 2%, $bottommenucolor$ 100%); }
-	</style>
 </head>
 <body>
 <div id="wrapg">
 	<div class="head">
-		<div class="title_name"><div style="display: table; width: 100%; height: 100%"><div style="display:table-cell; vertical-align:middle;">ГУЗ "Липецкий городской родильный дом"</div></div></div>
+		<div class="title_name"><div style="display: table; width: 100%; height: 100%"><div style="display:table-cell; vertical-align:middle;">ГУЗ Липецкий городской родильный дом №1</div></div></div>
 	</div>
 	
 	<div id="menu">
@@ -37,7 +20,7 @@ $( document ).ready(function() {
 	</div>
 
 	<div class="content_main">
-		<div class="fotorama" data-loop="true" data-fit="cover" data-transition="dissolve" data-nav="thumbs" data-width="1160" data-height="550" data-autoplay="true">
+		<div class="fotorama" data-loop="true" data-fit="cover" data-transition="dissolve" data-nav="thumbs" data-width="1160" data-height="500">
 			<img src="skin/gl/1.JPG" />
 			<img src="skin/gl/2.JPG" />
 			<img src="skin/gl/3.JPG" />
@@ -53,7 +36,6 @@ $( document ).ready(function() {
 	
 	
 </div>
-
 </body>
 </html>
 	 
